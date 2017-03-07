@@ -20,7 +20,7 @@ returns: -3 = unknown host
          -1 = stream connect attempt failed
         >=0 = file handle of connected socket
 */
-int tcpclientconnect (char *host, int port, int winsiz)
+int tcp_clientconnect (char *host, int port, int winsiz)
 {
 	struct sockaddr_in sa;
 	struct hostent *hp = gethostbyname(host);
@@ -55,7 +55,7 @@ int tcpclientconnect (char *host, int port, int winsiz)
 	}
 }
 
-void tcpclientdisconnect (int sk)
+void tcp_clientdisconnect (int sk)
 {
 	shutdown (sk, SHUT_RDWR);
 	close (sk);

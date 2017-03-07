@@ -18,7 +18,7 @@ static void timeoutsub (int n)
 
 // write len bytes from buf to sock, waiting secs before timing out
 // returns: 0 = OK, -1 = timed out, -2 = write failed immediately
-int writetosocket (int sock, char *buf, int len, int secs) 
+int tcp_writetosocket (int sock, char *buf, int len, int secs) 
 {
 	int r;
 
@@ -48,7 +48,7 @@ int writetosocket (int sock, char *buf, int len, int secs)
 
 // read up to len bytes from sock to buf, waiting secs before timing out
 // returns: >0 = # bytes read, 0 = EOF, -1 = timed out, -2 = read failed immediately
-int readfromsocket (int sock, char *buf, int len, int secs)
+int tcp_readfromsocket (int sock, char *buf, int len, int secs)
 {
 	int l, r;
 
